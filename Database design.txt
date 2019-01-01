@@ -1,0 +1,108 @@
+用户
+/***用户基础信息实体***/
+
+User_ID    //用户ID
+User_Name	//用户自定义名称，邮箱
+
+/***登录实体***/ 
+
+ID  //自身ID
+User_ID   	//对应用户基础信息的ID
+Login_Type		//第三方登录类型
+identifier      //实际账号（标识）
+password   //密码凭证
+
+
+
+电影
+
+/***电影实体***/
+movie_ID    //电影ID
+movie_Name  //电影名
+movie_official_website  //官方网站
+moive_Length    //片长
+moive_IMDb_Link       //链接
+movie_description //简介
+douban_score 
+douban_human_number
+
+/***导演实体***/
+director_ID
+director_Name
+director_Sex
+director_birthday
+director_dead
+director_Profile
+director_Chinesename
+director_imdb
+
+
+/***编剧实体***/
+scriptwriter_ID
+scriptwriter_Name
+scriptwriter_birthday
+scriptwriter_dead
+scriptwriter_profile
+scriptwriter_Chinesename
+
+
+/***演员实体***/
+Act_ID  //演员ID
+Act_Name    //演员姓名
+Act_Sex     //性别
+Act_Constellation   //星座
+Act_born_time    //出生时间
+Act_Profile //职业
+Act_ChineseName //中文名
+Act_imdb    //imdb编号
+
+/***电影类型实体***/
+type_ID
+type_Name
+
+/***职业类型实体***/
+profile_ID
+profile_Name
+
+/***制片国家地区***/
+area_ID
+area_Name
+
+/***语言实体***/
+language_ID
+language_Name
+
+/***上映时间***/
+uptime_ID
+uptime
+
+/***又名***/
+other_name_ID
+other_name_Name
+
+
+评价
+/***影评实体***/
+evaluation_ID
+evaluation_type
+User_Name
+star_Number
+evaluation_Date
+evaluation_comment
+evaluation_agree    //认为有用人数
+evaluation_total    //评价总人数
+
+
+话题
+/***电影话题***/
+topic_ID
+topic_Name
+topic_evaluation_number
+topic_evaluation_look
+topic_attention_number
+User_ID
+
+/***电影话题中的评论***/
+movie_ID
+User_ID
+User_evaluation
