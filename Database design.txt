@@ -1,0 +1,69 @@
+﻿用户
+/***用户基础信息实体***/
+
+User_ID             //用户ID
+User_Name	        //用户自定义名称，邮箱
+
+/***登录实体***/ 
+
+Login_ID         //自身ID
+User_ID   	     //对应用户基础信息的ID
+Login_Type		 //第三方登录类型
+Login_Ident      //实际账号（标识）
+Login_Pass       //密码凭证
+
+电影
+
+/***电影实体***/
+movie_ID                //电影ID
+movie_Name              //电影名
+movie_Website  			//官方网站
+moive_Length            //片长
+moive_Link         		//链接
+movie_Desc       		//简介
+douban_score            //豆瓣评分
+douban_viewnum     		//douban 观看人数
+other_name              //别名
+update_time             //上映时间
+movie_Area              //制片国家和地区
+movie_language          //电影语言
+
+/***人员实体***/
+Act_ID                  //演员ID
+Act_Name                //演员姓名
+Act_Sex                 //性别
+Act_birthday            //出生时间
+Act_ChineseName         //中文名
+Act_imdb                //imdb编号
+
+/***电影类型实体***/
+type_ID
+type_Name
+
+/***职业类型实体***/
+profile_ID
+profile_Name
+
+
+评价
+/***影评实体***/
+evaluation_ID
+User_ID
+movie_ID
+evaluation_type
+star_Number
+evaluation_Date
+evaluation_comment
+evaluation_agree    //认为有用人数
+evaluation_total    //评价总人数
+
+
+话题
+/***电影话题***/
+topic_ID
+User_ID
+topic_Name
+topic_evaluation_number
+topic_evaluation_look
+topic_attention_number
+
