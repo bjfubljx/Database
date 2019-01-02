@@ -13,6 +13,29 @@ public class moive {
 	private String update_time;
 	private String movie_Area;
 	private String movie_Language;
+	public moive() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public moive(int movie_ID, String movie_Name,
+			String movie_official_website, String movie_Length,
+			String moive_IMDB_Link, String movie_description,
+			String douban_score, String douban_human_number, String other_name,
+			String update_time, String movie_Area, String movie_Language) {
+		super();
+		this.movie_ID = movie_ID;
+		this.movie_Name = movie_Name;
+		this.movie_official_website = movie_official_website;
+		this.movie_Length = movie_Length;
+		this.moive_IMDB_Link = moive_IMDB_Link;
+		this.movie_description = movie_description;
+		this.douban_score = douban_score;
+		this.douban_human_number = douban_human_number;
+		this.other_name = other_name;
+		this.update_time = update_time;
+		this.movie_Area = movie_Area;
+		this.movie_Language = movie_Language;
+	}
 	public int getMovie_ID() {
 		return movie_ID;
 	}
