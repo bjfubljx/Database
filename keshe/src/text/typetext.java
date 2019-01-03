@@ -8,7 +8,7 @@ import DAo.typeSQL;
 
 public class typetext {
 	public void testInserttype() {
-		type type=new type(4,"");
+		type type=new type(14,"≤‚ ‘");
 		typeSQL dao=new typeSQL();
 		try {
 			dao.addtype(type);
@@ -18,7 +18,7 @@ public class typetext {
 	}
 
 	public void testUpdatetype() {
-		type type=new type(4,"");
+		type type=new type(14,"–ﬁ∏ƒ≤‚ ‘");
 		typeSQL dao=new typeSQL();
 		try {
 			dao.updatetype(type);
@@ -30,7 +30,7 @@ public class typetext {
 	public void testDeletetype() {
 		typeSQL dao=new typeSQL();
 		try {
-			dao.deletetype(9);
+			dao.deletetype(14);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

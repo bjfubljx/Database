@@ -8,17 +8,16 @@ public class evaluation {
 	private int star_Number;
 	private String evaluation_Date;
 	private String evaluation_comment;
-	private String evaluation_agree;
-	private String evaluation_total;
-	
+	private int evaluation_agree;
+	private int evaluation_total;
 	public evaluation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public evaluation(int evaluation_ID, int user_ID, int movie_ID,
 			String evaluation_type, int star_Number, String evaluation_Date,
-			String evaluation_comment, String evaluation_agree,
-			String evaluation_total) {
+			String evaluation_comment, int evaluation_agree,
+			int evaluation_total) {
 		super();
 		this.evaluation_ID = evaluation_ID;
 		User_ID = user_ID;
@@ -72,16 +71,16 @@ public class evaluation {
 	public void setEvaluation_comment(String evaluation_comment) {
 		this.evaluation_comment = evaluation_comment;
 	}
-	public String getEvaluation_agree() {
+	public int getEvaluation_agree() {
 		return evaluation_agree;
 	}
-	public void setEvaluation_agree(String evaluation_agree) {
+	public void setEvaluation_agree(int evaluation_agree) {
 		this.evaluation_agree = evaluation_agree;
 	}
-	public String getEvaluation_total() {
+	public int getEvaluation_total() {
 		return evaluation_total;
 	}
-	public void setEvaluation_total(String evaluation_total) {
+	public void setEvaluation_total(int evaluation_total) {
 		this.evaluation_total = evaluation_total;
 	}
 }

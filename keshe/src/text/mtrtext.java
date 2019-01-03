@@ -8,7 +8,7 @@ import DAo.mtrSQL;
 
 public class mtrtext {
 	public void testInsertmtr() {
-		mtr mtr=new mtr(4,4,4);
+		mtr mtr=new mtr(7,3,1);
 		mtrSQL dao=new mtrSQL();
 		try {
 			dao.addmtr(mtr);
@@ -18,7 +18,7 @@ public class mtrtext {
 	}
 
 	public void testUpdatemtr() {
-		mtr mtr=new mtr(4,4,4);
+		mtr mtr=new mtr(7,3,2);
 		mtrSQL dao=new mtrSQL();
 		try {
 			dao.updatemtr(mtr);
@@ -30,7 +30,7 @@ public class mtrtext {
 	public void testDeletemtr() {
 		mtrSQL dao=new mtrSQL();
 		try {
-			dao.deletemtr(9);
+			dao.deletemtr(7);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

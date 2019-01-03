@@ -8,7 +8,7 @@ import DAo.personSQL;
 
 public class persontext {
 	public void testInsertperson() {
-		person person=new person(4,"","","","","");
+		person person=new person(21,"≤‚ ‘","≤‚","1999-01-09","≤‚ ‘","m498529");
 		personSQL dao=new personSQL();
 		try {
 			dao.addperson(person);
@@ -18,7 +18,7 @@ public class persontext {
 	}
 
 	public void testUpdateperson() {
-		person person=new person(4,"","","","","");
+		person person=new person(21,"–ﬁ∏ƒ≤‚ ‘","–ﬁ∏ƒ","1999-01-09","–ﬁ∏ƒ≤‚ ‘","m23425");
 		personSQL dao=new personSQL();
 		try {
 			dao.updateperson(person);
@@ -30,7 +30,7 @@ public class persontext {
 	public void testDeleteperson() {
 		personSQL dao=new personSQL();
 		try {
-			dao.deleteperson(9);
+			dao.deleteperson(21);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

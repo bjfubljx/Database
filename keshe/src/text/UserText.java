@@ -8,7 +8,7 @@ import DAo.UserSQL;
 
 public class UserText {
 	public void testInsertUser() {
-		User user=new User(4,4,"","","");
+		User user=new User(5,1001,"≤‚ ‘","≤‚ ‘","≤‚ ‘");
 		UserSQL dao=new UserSQL();
 		try {
 			dao.addUser(user);
@@ -18,7 +18,7 @@ public class UserText {
 	}
 
 	public void testUpdateUser() {
-		User user=new User(4,4,"","","");
+		User user=new User(5,1001,"–ﬁ∏ƒ≤‚ ‘","–ﬁ∏ƒ≤‚ ‘","–ﬁ∏ƒ≤‚ ‘");
 		UserSQL dao=new UserSQL();
 		try {
 			dao.updateUser(user);
@@ -30,7 +30,7 @@ public class UserText {
 	public void testDeleteUser() {
 		UserSQL dao=new UserSQL();
 		try {
-			dao.deleteUser(9);
+			dao.deleteUser(5);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

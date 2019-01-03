@@ -8,7 +8,7 @@ import DAo.mprSQL;
 
 public class mprtext {
 	public void testInsertmpr() {
-		mpr mpr=new mpr(4,4,4,4);
+		mpr mpr=new mpr(7,2,4,1);
 		mprSQL dao=new mprSQL();
 		try {
 			dao.addmpr(mpr);
@@ -18,7 +18,7 @@ public class mprtext {
 	}
 
 	public void testUpdatempr() {
-		mpr mpr=new mpr(4,4,4,4);
+		mpr mpr=new mpr(7,2,4,3);
 		mprSQL dao=new mprSQL();
 		try {
 			dao.updatempr(mpr);
@@ -30,7 +30,7 @@ public class mprtext {
 	public void testDeletempr() {
 		mprSQL dao=new mprSQL();
 		try {
-			dao.deletempr(9);
+			dao.deletempr(7);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

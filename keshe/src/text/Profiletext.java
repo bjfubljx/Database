@@ -8,7 +8,7 @@ import DAo.ProfileSQL;
 
 public class Profiletext {
 	public void testInsertProfile() {
-		Profile profile=new Profile(4,"");
+		Profile profile=new Profile(11,"≤‚ ‘");
 		ProfileSQL dao=new ProfileSQL();
 		try {
 			dao.addProfile(profile);
@@ -18,7 +18,7 @@ public class Profiletext {
 	}
 
 	public void testUpdateProfile() {
-		Profile profile=new Profile(4,"");
+		Profile profile=new Profile(11,"–ﬁ∏ƒ≤‚ ‘");
 		ProfileSQL dao=new ProfileSQL();
 		try {
 			dao.updateProfile(profile);
@@ -30,7 +30,7 @@ public class Profiletext {
 	public void testDeleteProfile() {
 		ProfileSQL dao=new ProfileSQL();
 		try {
-			dao.deleteProfile(9);
+			dao.deleteProfile(11);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

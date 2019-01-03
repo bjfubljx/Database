@@ -22,9 +22,9 @@ public class topicSQL extends DAOBase implements topicDAO{
 		ps.setInt(1, topic.getTopic_ID());
 		ps.setInt(2, topic.getMovie_ID());
 		ps.setString(3, topic.getTopic_Name());
-		ps.setString(4, topic.getTopic_attention_number());
-		ps.setString(5, topic.getTopic_evaluation_look());
-		ps.setString(6, topic.getTopic_attention_number());
+		ps.setInt(4, topic.getTopic_attention_number());
+		ps.setInt(5, topic.getTopic_evaluation_look());
+		ps.setInt(6, topic.getTopic_attention_number());
 		i = ps.executeUpdate();
 		ps.close();
 		conn.close();
@@ -59,9 +59,9 @@ public class topicSQL extends DAOBase implements topicDAO{
 		ps.setInt(1, topic.getTopic_ID());
 		ps.setInt(2, topic.getMovie_ID());
 		ps.setString(3, topic.getTopic_Name());
-		ps.setString(4, topic.getTopic_attention_number());
-		ps.setString(5, topic.getTopic_evaluation_look());
-		ps.setString(6, topic.getTopic_attention_number());
+		ps.setInt(4, topic.getTopic_attention_number());
+		ps.setInt(5, topic.getTopic_evaluation_look());
+		ps.setInt(6, topic.getTopic_attention_number());
 		i = ps.executeUpdate();
 		ps.close();
 		conn.close();
@@ -83,9 +83,9 @@ public class topicSQL extends DAOBase implements topicDAO{
 			topic.setTopic_ID(rs.getInt(""));
 			topic.setMovie_ID(rs.getInt(""));
 			topic.setTopic_Name(rs.getString(""));
-			topic.setTopic_evaluation_number(rs.getString(""));
-			topic.setTopic_evaluation_look(rs.getString(""));
-			topic.setTopic_attention_number(rs.getString(""));
+			topic.setTopic_evaluation_number(rs.getInt(""));
+			topic.setTopic_evaluation_look(rs.getInt(""));
+			topic.setTopic_attention_number(rs.getInt(""));
 		}
 		rs.close();
 		ps.close();
@@ -109,9 +109,9 @@ public class topicSQL extends DAOBase implements topicDAO{
 			topic.setTopic_ID(rs.getInt(""));
 			topic.setMovie_ID(rs.getInt(""));
 			topic.setTopic_Name(rs.getString(""));
-			topic.setTopic_evaluation_number(rs.getString(""));
-			topic.setTopic_evaluation_look(rs.getString(""));
-			topic.setTopic_attention_number(rs.getString(""));
+			topic.setTopic_evaluation_number(rs.getInt(""));
+			topic.setTopic_evaluation_look(rs.getInt(""));
+			topic.setTopic_attention_number(rs.getInt(""));
 			all.add(topic);
 		}
 		rs.close();

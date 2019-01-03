@@ -7,7 +7,7 @@ import DAo.LoginSQL;
 import keshe.Login;
 public class logintext {
 	public void testInsertlogin() {
-		Login login=new Login(4,"");
+		Login login=new Login(1006,"≤‚ ‘");
 		LoginSQL dao=new LoginSQL();
 		try {
 			dao.addLogin(login);
@@ -17,7 +17,7 @@ public class logintext {
 	}
 
 	public void testUpdatelogin() {
-		Login login=new Login(4,"");
+		Login login=new Login(1006,"–ﬁ∏ƒ≤‚ ‘");
 		LoginSQL dao=new LoginSQL();
 		try {
 			dao.updateLogin(login);
@@ -29,7 +29,7 @@ public class logintext {
 	public void testDeletelogin() {
 		LoginSQL dao=new LoginSQL();
 		try {
-			dao.deleteLogin(9);
+			dao.deleteLogin(1006);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -38,7 +38,7 @@ public class logintext {
 	public void testGetLoginById() {
 		LoginSQL dao=new LoginSQL();
 		try {
-			Login login=dao.findLogin(3);
+			Login login=dao.findLogin(1001);
 			System.out.println("Loginid: "+login.getUser_ID());
 			System.out.println("LoginName: "+ login.getUser_Name());
 		} catch (SQLException e) {

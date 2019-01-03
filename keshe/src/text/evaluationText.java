@@ -8,7 +8,7 @@ import DAo.evaluationSQL;;
 
 public class evaluationText {
 	public void testInsertevaluation() {
-		evaluation evaluation=new evaluation(4,4,4,"",4,"","","","");
+		evaluation evaluation=new evaluation(4,1004,2,"测试",4,"2019-01-03","这是一个测试",1111,11111);
 		evaluationSQL dao=new evaluationSQL();
 		try {
 			dao.addevaluation(evaluation);
@@ -18,7 +18,7 @@ public class evaluationText {
 	}
 
 	public void testUpdateevluation() {
-		evaluation evaluation=new evaluation(4,4,4,"",4,"","","","");
+		evaluation evaluation=new evaluation(4,1004,2,"测试修改",4,"2019-01-03","测试修改",1111,11111);
 		evaluationSQL dao=new evaluationSQL();
 		try {
 			dao.updateevaluation(evaluation);
@@ -30,7 +30,7 @@ public class evaluationText {
 	public void testDeleteevluation() {
 		evaluationSQL dao=new evaluationSQL();
 		try {
-			dao.deleteevaluation(9);
+			dao.deleteevaluation(4);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

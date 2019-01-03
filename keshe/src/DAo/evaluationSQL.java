@@ -26,8 +26,8 @@ public class evaluationSQL extends DAOBase implements evaluationDAO{
 		ps.setInt(5, evaluation.getStar_Number());
 		ps.setString(6, evaluation.getEvaluation_Date());
 		ps.setString(7, evaluation.getEvaluation_comment());
-		ps.setString(7, evaluation.getEvaluation_agree());
-		ps.setString(8, evaluation.getEvaluation_total());
+		ps.setInt(7, evaluation.getEvaluation_agree());
+		ps.setInt(8, evaluation.getEvaluation_total());
 		i = ps.executeUpdate();
 		ps.close();
 		conn.close();
@@ -66,8 +66,8 @@ public class evaluationSQL extends DAOBase implements evaluationDAO{
 		ps.setInt(5, evaluation.getStar_Number());
 		ps.setString(6, evaluation.getEvaluation_Date());
 		ps.setString(7, evaluation.getEvaluation_comment());
-		ps.setString(7, evaluation.getEvaluation_agree());
-		ps.setString(8, evaluation.getEvaluation_total());
+		ps.setInt(7, evaluation.getEvaluation_agree());
+		ps.setInt(8, evaluation.getEvaluation_total());
 		i = ps.executeUpdate();
 		ps.close();
 		conn.close();
@@ -93,8 +93,8 @@ public class evaluationSQL extends DAOBase implements evaluationDAO{
 			evaluation.setStar_Number(rs.getInt(""));
 			evaluation.setEvaluation_Date(rs.getString(""));
 			evaluation.setEvaluation_comment(rs.getString(""));
-			evaluation.setEvaluation_agree(rs.getString(""));
-			evaluation.setEvaluation_total(rs.getString(""));
+			evaluation.setEvaluation_agree(rs.getInt(""));
+			evaluation.setEvaluation_total(rs.getInt(""));
 		}
 		rs.close();
 		ps.close();
@@ -122,8 +122,8 @@ public class evaluationSQL extends DAOBase implements evaluationDAO{
 			evaluation.setStar_Number(rs.getInt(""));
 			evaluation.setEvaluation_Date(rs.getString(""));
 			evaluation.setEvaluation_comment(rs.getString(""));
-			evaluation.setEvaluation_agree(rs.getString(""));
-			evaluation.setEvaluation_total(rs.getString(""));
+			evaluation.setEvaluation_agree(rs.getInt(""));
+			evaluation.setEvaluation_total(rs.getInt(""));
 			all.add(evaluation);
 		}
 		rs.close();

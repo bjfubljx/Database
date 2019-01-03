@@ -8,7 +8,7 @@ import DAo.topicSQL;
 
 public class topictext {
 	public void testInserttopic() {
-		topic topic=new topic(4,4,"","","","");
+		topic topic=new topic(4,4,"≤‚ ‘",6,7,8);
 		topicSQL dao=new topicSQL();
 		try {
 			dao.addtopic(topic);
@@ -18,7 +18,7 @@ public class topictext {
 	}
 
 	public void testUpdatetopic() {
-		topic topic=new topic(4,4,"","","","");
+		topic topic=new topic(4,4,"–ﬁ∏ƒ≤‚ ‘",6,7,8);
 		topicSQL dao=new topicSQL();
 		try {
 			dao.updatetopic(topic);
@@ -30,7 +30,7 @@ public class topictext {
 	public void testDeletetopic() {
 		topicSQL dao=new topicSQL();
 		try {
-			dao.deletetopic(9);
+			dao.deletetopic(4);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
