@@ -6,6 +6,19 @@ public class User {
 	private String Login_Type;
 	private String identifier;
 	private String password;
+	public User(int iD, int user_ID, String login_Type, String identifier,
+			String password) {
+		super();
+		ID = iD;
+		User_ID = user_ID;
+		Login_Type = login_Type;
+		this.identifier = identifier;
+		this.password = password;
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getID() {
 		return ID;
 	}

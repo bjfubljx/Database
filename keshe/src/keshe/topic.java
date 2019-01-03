@@ -7,6 +7,22 @@ public class topic {
 	private String topic_evaluation_number;
 	private String topic_evaluation_look;
 	private String topic_attention_number;
+	
+	public topic() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public topic(int topic_ID, int movie_ID, String topic_Name,
+			String topic_evaluation_number, String topic_evaluation_look,
+			String topic_attention_number) {
+		super();
+		this.topic_ID = topic_ID;
+		this.movie_ID = movie_ID;
+		this.topic_Name = topic_Name;
+		this.topic_evaluation_number = topic_evaluation_number;
+		this.topic_evaluation_look = topic_evaluation_look;
+		this.topic_attention_number = topic_attention_number;
+	}
 	public int getTopic_ID() {
 		return topic_ID;
 	}

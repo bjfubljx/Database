@@ -7,6 +7,21 @@ public class person {
 	private String Act_birthday;
 	private String Act_ChineseName;
 	private String Act_imbd;
+	
+	public person(int act_ID, String act_Name, String act_Sex,
+			String act_birthday, String act_ChineseName, String act_imbd) {
+		super();
+		Act_ID = act_ID;
+		Act_Name = act_Name;
+		Act_Sex = act_Sex;
+		Act_birthday = act_birthday;
+		Act_ChineseName = act_ChineseName;
+		Act_imbd = act_imbd;
+	}
+	public person() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getAct_ID() {
 		return Act_ID;
 	}
