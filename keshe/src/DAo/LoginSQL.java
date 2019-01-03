@@ -10,7 +10,7 @@ import java.util.List;
 import keshe.Login;
 
 public class LoginSQL extends DAOBase implements LoginDAO{
-	private static final String insertActor_SQL = "INSERT INTO User(User_ID,User_Name) VALUES(?,?)";
+	private static final String insertActor_SQL = "INSERT INTO [MOVIE_DATABASE].[dbo].[User](User_ID,User_Name) VALUES(?,?)";
 	//插入一个
 	public int addLogin(Login login)throws SQLException
     {
@@ -27,7 +27,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		return i;
     }
 	
-	private static final String deleteActor_SQL = "DELETE FROM User WHERE User_ID = ?";
+	private static final String deleteActor_SQL = "DELETE FROM [MOVIE_DATABASE].[dbo].[User] WHERE User_ID = ?";
     //删除一个
 	public int deleteLogin(int id)throws SQLException
 	{
@@ -43,7 +43,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		return i;
 	}
 	
-	private static final String updateActor_SQL = "UPDATE User SET User_Name = ? WHERE User_ID = ?";
+	private static final String updateActor_SQL = "UPDATE [MOVIE_DATABASE].[dbo].[User] SET User_Name = ? WHERE User_ID = ?";
 	//修改一个
 	public int updateLogin(Login login)throws SQLException
 	{
@@ -59,7 +59,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		conn.close();
 		return i;
 	}
-	private static final String getActorById_SQL = "SELECT * FROM User WHERE User_ID = ?";
+	private static final String getActorById_SQL = "SELECT * FROM [MOVIE_DATABASE].[dbo].[User] WHERE User_ID = ?";
 	//查询一行
 	public Login findLogin(int id)throws SQLException
 	{
@@ -81,7 +81,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		return login;
 	}
 	
-	private static final String getAllActor_SQL = "SELECT * FROM User";
+	private static final String getAllActor_SQL = "SELECT * FROM [MOVIE_DATABASE].[dbo].[User]";
 	//查询所有
 	public List<Login> getAllLogin() throws SQLException
 	{

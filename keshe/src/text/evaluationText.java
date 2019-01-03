@@ -7,7 +7,7 @@ import keshe.evaluation;
 import DAo.evaluationSQL;;
 
 public class evaluationText {
-	public void testInsertevaluation() {
+	public static void testInsertevaluation() {
 		evaluation evaluation=new evaluation(4,1004,2,"测试",4,"2019-01-03","这是一个测试",1111,11111);
 		evaluationSQL dao=new evaluationSQL();
 		try {
@@ -17,7 +17,7 @@ public class evaluationText {
 		}
 	}
 
-	public void testUpdateevluation() {
+	public static void testUpdateevluation() {
 		evaluation evaluation=new evaluation(4,1004,2,"测试修改",4,"2019-01-03","测试修改",1111,11111);
 		evaluationSQL dao=new evaluationSQL();
 		try {
@@ -27,7 +27,7 @@ public class evaluationText {
 		}
 	}
 
-	public void testDeleteevluation() {
+	public static void testDeleteevluation() {
 		evaluationSQL dao=new evaluationSQL();
 		try {
 			dao.deleteevaluation(4);
@@ -36,7 +36,7 @@ public class evaluationText {
 		}
 	}
 
-	public void testGetevaluationById() {
+	public static void testGetevaluationById() {
 		evaluationSQL dao=new evaluationSQL();
 		try {
 			evaluation evaluation=dao.findevaluation(3);
@@ -55,7 +55,7 @@ public class evaluationText {
 		}
 	}
 
-	public void testGetAllevaluation() {
+	public static void testGetAllevaluation() {
 		evaluationSQL dao=new evaluationSQL();
 		try {
 			List<evaluation> evaluations=dao.getAllevaluation();
@@ -74,5 +74,9 @@ public class evaluationText {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	public static void main(String args[])
+	{
+		testInsertevaluation();
 	}
 }

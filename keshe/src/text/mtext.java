@@ -7,7 +7,7 @@ import DAo.movieSQL;
 import keshe.moive;
 
 public class mtext {
-	public void testInsertActor() {
+	public void testInsertmoive() {
 		moive moive=new moive(4,"²âÊÔ","²âÊÔ",1234,"²âÊÔ","²âÊÔ","²âÊÔ",6,"²âÊÔ","²âÊÔ","²âÊÔ","²âÊÔ");
 		movieSQL dao=new movieSQL();
 		try {
@@ -17,8 +17,8 @@ public class mtext {
 		}
 	}
 
-	public void testUpdateActor() {
-		moive moive=new moive(4,"ĞŞ¸Ä²âÊÔ","ĞŞ¸Ä²âÊÔ",1234,"ĞŞ¸Ä²âÊÔ","ĞŞ¸Ä²âÊÔ","ĞŞ¸Ä²âÊÔ",6,"ĞŞ¸Ä²âÊÔ","ĞŞ¸Ä²âÊÔ","ĞŞ¸Ä²âÊÔ","ĞŞ¸Ä²âÊÔ");
+	public void testUpdatemoive() {
+		moive moive=new moive(4,"ĞŞ¸Ä²âÊÔ1","ĞŞ¸Ä²âÊÔ2",1234,"ĞŞ¸Ä²âÊÔ3","ĞŞ¸Ä²âÊÔ4","ĞŞ¸Ä²âÊÔ5",6,"ĞŞ¸Ä²âÊÔ6","ĞŞ¸Ä²âÊÔ7","ĞŞ¸Ä²âÊÔ8","²âÊÔ");
 		movieSQL dao=new movieSQL();
 		try {
 			dao.updatemoive(moive);
@@ -27,7 +27,7 @@ public class mtext {
 		}
 	}
 
-	public void testDeleteActor() {
+	public void testDeletemoive() {
 		movieSQL dao=new movieSQL();
 		try {
 			dao.deletemoive(4);
@@ -36,7 +36,7 @@ public class mtext {
 		}
 	}
 
-	public void testGetActorById() {
+	public void testGetmoiveById() {
 		movieSQL dao=new movieSQL();
 		try {
 			moive moive=dao.findmoive(3);
@@ -57,7 +57,7 @@ public class mtext {
 		}
 	}
 
-	public void testGetAllActor() {
+	public void testGetAllmoive() {
 		movieSQL dao=new movieSQL();
 		try {
 			List<moive> moives=dao.getAllmoive();
