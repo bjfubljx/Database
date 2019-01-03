@@ -9,52 +9,56 @@ import DAo.mprSQL;
 public class mprtext {
 	public void testInsertmpr() {
 		mpr mpr=new mpr(4,4,4,4);
-		LoginSQL dao=new LoginSQL();
+		mprSQL dao=new mprSQL();
 		try {
-			dao.addLogin(login);
+			dao.addmpr(mpr);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void testUpdatelogin() {
-		Login login=new Login(4,"");
-		LoginSQL dao=new LoginSQL();
+	public void testUpdatempr() {
+		mpr mpr=new mpr(4,4,4,4);
+		mprSQL dao=new mprSQL();
 		try {
-			dao.updateLogin(login);
+			dao.updatempr(mpr);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void testDeletelogin() {
-		LoginSQL dao=new LoginSQL();
+	public void testDeletempr() {
+		mprSQL dao=new mprSQL();
 		try {
-			dao.deleteLogin(9);
+			dao.deletempr(9);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void testGetLoginById() {
-		LoginSQL dao=new LoginSQL();
+	public void testGetmprById() {
+		mprSQL dao=new mprSQL();
 		try {
-			Login login=dao.findLogin(3);
-			System.out.println("Loginid: "+login.getUser_ID());
-			System.out.println("LoginName: "+ login.getUser_Name());
+			mpr mpr=dao.findmpr(3);
+			System.out.println("mprid: "+mpr.getMpr_ID());
+			System.out.println("moive_id: "+ mpr.getMoive_ID());
+			System.out.println("Act_ID:"+mpr.getAct_ID());
+			System.out.println("Profile_ID"+mpr.getProfile_ID());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void testGetAllActor() {
-		LoginSQL dao=new LoginSQL();
+	public void testGetAllmpr() {
+		mprSQL dao=new mprSQL();
 		try {
-			List<Login> logins=dao.getAllLogin();
-			for(int i=0;i<logins.size();i++)
+			List<mpr> mprs=dao.getAllmpr();
+			for(int i=0;i<mprs.size();i++)
 			{
-				System.out.println("Loginid: "+logins.get(i).getUser_ID());
-				System.out.println("LoginName: "+ logins.get(i).getUser_Name());
+				System.out.println("mprid: "+mprs.get(i).getMpr_ID());
+				System.out.println("moive_id: "+ mprs.get(i).getMoive_ID());
+				System.out.println("Act_ID:"+mprs.get(i).getAct_ID());
+				System.out.println("Profile_ID"+mprs.get(i).getProfile_ID());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
