@@ -10,7 +10,7 @@ import java.util.List;
 import keshe.Profile;
 
 public class ProfileSQL extends DAOBase implements ProfileDAO{
-	private static final String insertProfile_SQL = "INSERT INTO actorinfo(chinesename,name,IMDbid,sex,birthday,profile,image) VALUES(?,?,?,?,?,?,?)";
+	private static final String insertProfile_SQL = "INSERT INTO Profile(Profile_ID,Profile_Name) VALUES(?,?)";
 	//插入一个
 	public int addProfile(Profile profile)throws SQLException
     {
@@ -27,7 +27,7 @@ public class ProfileSQL extends DAOBase implements ProfileDAO{
 		return i;
     }
 	
-	private static final String deleteprofile_SQL = "DELETE FROM actorinfo WHERE actorid =?";
+	private static final String deleteprofile_SQL = "DELETE FROM Profile WHERE Profile_ID = ?";
     //删除一个
 	public int deleteProfile(int id)throws SQLException
 	{
@@ -43,7 +43,7 @@ public class ProfileSQL extends DAOBase implements ProfileDAO{
 		return i;
 	}
 	
-	private static final String updateprofile_SQL = "UPDATE actorinfo SET chinesename =?,name =?,IMDbid =?,sex =?,birthday =?,profile =?,image =? WHERE actorid =?";
+	private static final String updateprofile_SQL = "UPDATE Profile SET Profile_Name = ? WHERE Profile_ID = ?";
 	//修改一个
 	public int updateProfile(Profile profile)throws SQLException
 	{
@@ -52,14 +52,14 @@ public class ProfileSQL extends DAOBase implements ProfileDAO{
 		PreparedStatement ps = null;
 		conn = getConnection();
 		ps = conn.prepareStatement(updateprofile_SQL);
-		ps.setInt(1, profile.getProfile_ID());
-		ps.setString(2, profile.getProfile_Name());
+		ps.setInt(2, profile.getProfile_ID());
+		ps.setString(1, profile.getProfile_Name());
 		i = ps.executeUpdate();
 		ps.close();
 		conn.close();
 		return i;
 	}
-	private static final String getprofileById_SQL = "SELECT * FROM actorinfo WHERE actorid =?";
+	private static final String getprofileById_SQL = "SELECT * FROM Profile WHERE Profile_ID = ?";
 	//查询一行
 	public Profile findProfile(int id)throws SQLException
 	{
@@ -72,8 +72,8 @@ public class ProfileSQL extends DAOBase implements ProfileDAO{
 		ps.setInt(1, id);
 		rs = ps.executeQuery();
 		while(rs.next()) {
-			profile.setProfile_ID(rs.getInt(""));
-			profile.setProfile_Name(rs.getString(""));
+			profile.setProfile_ID(rs.getInt("Profile_ID"));
+			profile.setProfile_Name(rs.getString("Profile_Name"));
 		}
 		rs.close();
 		ps.close();
@@ -81,7 +81,7 @@ public class ProfileSQL extends DAOBase implements ProfileDAO{
 		return profile;
 	}
 	
-	private static final String getAllActor_SQL = "SELECT * FROM actorinfo ";
+	private static final String getAllActor_SQL = "SELECT * FROM Profile ";
 	//查询所有
 	public List<Profile> getAllProfile() throws SQLException
 	{
@@ -94,8 +94,8 @@ public class ProfileSQL extends DAOBase implements ProfileDAO{
 		rs = ps.executeQuery();
 		while(rs.next()) {
 			Profile profile = new Profile();
-			profile.setProfile_ID(rs.getInt(""));
-			profile.setProfile_Name(rs.getString(""));
+			profile.setProfile_ID(rs.getInt("Profile_ID"));
+			profile.setProfile_Name(rs.getString("Profile_Name"));
 			all.add(profile);
 		}
 		rs.close();

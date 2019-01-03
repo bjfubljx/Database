@@ -10,7 +10,7 @@ import java.util.List;
 import keshe.moive;
 
 public class movieSQL extends DAOBase implements movieDAO{
-	private static final String insertmoive_SQL = "INSERT INTO actorinfo(chinesename,name,IMDbid,sex,birthday,profile,image) VALUES(?,?,?,?,?,?,?)";
+	private static final String insertmoive_SQL = "INSERT INTO Movie(Movie_ID,Movie_Name,Movie_Website,Movie_Length,Movie_Link,Movie_Desc,douban_score,douban_viewnum,other_name,update_time,Movie_Area,Movie_Language) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	//插入一个
 	public int addmoive(moive moive)throws SQLException
     {
@@ -37,7 +37,7 @@ public class movieSQL extends DAOBase implements movieDAO{
 		return i;
     }
 	
-	private static final String deletemoive_SQL = "DELETE FROM actorinfo WHERE actorid =?";
+	private static final String deletemoive_SQL = "DELETE FROM Movie WHERE Movie_ID = ?";
     //删除一个
 	public int deletemoive(int id)throws SQLException
 	{
@@ -53,7 +53,7 @@ public class movieSQL extends DAOBase implements movieDAO{
 		return i;
 	}
 	
-	private static final String updatemoive_SQL = "UPDATE actorinfo SET chinesename =?,name =?,IMDbid =?,sex =?,birthday =?,profile =?,image =? WHERE actorid =?";
+	private static final String updatemoive_SQL = "UPDATE Movie SET Movie_Name = ?,Movie_Website =?,Movie_Length =?,Movie_Link =?,Movie_Desc =?,douban_score =?,douban_viewnum =?,other_name =?,update_time =?,Movie_Area =?,Movie_Language =? WHERE Movie_ID = ?";
 	//修改一个
 	public int updatemoive(moive moive)throws SQLException
 	{
@@ -79,7 +79,7 @@ public class movieSQL extends DAOBase implements movieDAO{
 		conn.close();
 		return i;
 	}
-	private static final String getmoiveById_SQL = "SELECT * FROM actorinfo WHERE actorid =?";
+	private static final String getmoiveById_SQL = "SELECT * FROM Movie WHERE Movie_ID = ?";
 	//查询一行
 	public moive findmoive(int id)throws SQLException
 	{
@@ -92,18 +92,18 @@ public class movieSQL extends DAOBase implements movieDAO{
 		ps.setInt(1, id);
 		rs = ps.executeQuery();
 		while(rs.next()) {
-			moive.setMovie_ID(rs.getInt(""));
-			moive.setMovie_Name(rs.getString(""));
-			moive.setMovie_official_website(rs.getString(""));
-			moive.setMovie_Length(rs.getInt(""));
-			moive.setMoive_IMDB_Link(rs.getString(""));
-			moive.setMovie_description(rs.getString(""));
-			moive.setDouban_score(rs.getString(""));
-			moive.setDouban_human_number(rs.getInt(""));
-			moive.setOther_name(rs.getString(""));
-			moive.setUpdate_time(rs.getString(""));
-			moive.setMovie_Area(rs.getString(""));
-			moive.setMovie_Language(rs.getString(""));
+			moive.setMovie_ID(rs.getInt("Movie_ID"));
+			moive.setMovie_Name(rs.getString("Movie_Name"));
+			moive.setMovie_official_website(rs.getString("Movie_Website"));
+			moive.setMovie_Length(rs.getInt("Movie_Length"));
+			moive.setMoive_IMDB_Link(rs.getString("Movie_Link"));
+			moive.setMovie_description(rs.getString("Movie_Desc"));
+			moive.setDouban_score(rs.getString("douban_score"));
+			moive.setDouban_human_number(rs.getInt("douban_viewnum"));
+			moive.setOther_name(rs.getString("other_name"));
+			moive.setUpdate_time(rs.getString("update_time"));
+			moive.setMovie_Area(rs.getString("Movie_Area"));
+			moive.setMovie_Language(rs.getString("Movie_Language"));
 		}
 		rs.close();
 		ps.close();
@@ -111,7 +111,7 @@ public class movieSQL extends DAOBase implements movieDAO{
 		return moive;
 	}
 	
-	private static final String getAllActor_SQL = "SELECT * FROM actorinfo ";
+	private static final String getAllActor_SQL = "SELECT * FROM Movie";
 	//查询所有
 	public List<moive> getAllmoive() throws SQLException
 	{
@@ -124,18 +124,18 @@ public class movieSQL extends DAOBase implements movieDAO{
 		rs = ps.executeQuery();
 		while(rs.next()) {
 			moive moive = new moive();
-			moive.setMovie_ID(rs.getInt(""));
-			moive.setMovie_Name(rs.getString(""));
-			moive.setMovie_official_website(rs.getString(""));
-			moive.setMovie_Length(rs.getInt(""));
-			moive.setMoive_IMDB_Link(rs.getString(""));
-			moive.setMovie_description(rs.getString(""));
-			moive.setDouban_score(rs.getString(""));
-			moive.setDouban_human_number(rs.getInt(""));
-			moive.setOther_name(rs.getString(""));
-			moive.setUpdate_time(rs.getString(""));
-			moive.setMovie_Area(rs.getString(""));
-			moive.setMovie_Language(rs.getString(""));
+			moive.setMovie_ID(rs.getInt("Movie_ID"));
+			moive.setMovie_Name(rs.getString("Movie_Name"));
+			moive.setMovie_official_website(rs.getString("Movie_Website"));
+			moive.setMovie_Length(rs.getInt("Movie_Length"));
+			moive.setMoive_IMDB_Link(rs.getString("Movie_Link"));
+			moive.setMovie_description(rs.getString("Movie_Desc"));
+			moive.setDouban_score(rs.getString("douban_score"));
+			moive.setDouban_human_number(rs.getInt("douban_viewnum"));
+			moive.setOther_name(rs.getString("other_name"));
+			moive.setUpdate_time(rs.getString("update_time"));
+			moive.setMovie_Area(rs.getString("Movie_Area"));
+			moive.setMovie_Language(rs.getString("Movie_Language"));
 			all.add(moive);
 		}
 		rs.close();

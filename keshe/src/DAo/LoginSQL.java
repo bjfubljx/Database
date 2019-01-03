@@ -10,7 +10,7 @@ import java.util.List;
 import keshe.Login;
 
 public class LoginSQL extends DAOBase implements LoginDAO{
-	private static final String insertActor_SQL = "INSERT INTO actorinfo(chinesename,name,IMDbid,sex,birthday,profile,image) VALUES(?,?,?,?,?,?,?)";
+	private static final String insertActor_SQL = "INSERT INTO User(User_ID,User_Name) VALUES(?,?)";
 	//插入一个
 	public int addLogin(Login login)throws SQLException
     {
@@ -27,7 +27,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		return i;
     }
 	
-	private static final String deleteActor_SQL = "DELETE FROM actorinfo WHERE actorid =?";
+	private static final String deleteActor_SQL = "DELETE FROM User WHERE User_ID = ?";
     //删除一个
 	public int deleteLogin(int id)throws SQLException
 	{
@@ -43,7 +43,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		return i;
 	}
 	
-	private static final String updateActor_SQL = "UPDATE actorinfo SET chinesename =?,name =?,IMDbid =?,sex =?,birthday =?,profile =?,image =? WHERE actorid =?";
+	private static final String updateActor_SQL = "UPDATE User SET User_Name = ? WHERE User_ID = ?";
 	//修改一个
 	public int updateLogin(Login login)throws SQLException
 	{
@@ -52,14 +52,14 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		PreparedStatement ps = null;
 		conn = getConnection();
 		ps = conn.prepareStatement(updateActor_SQL);
-		ps.setInt(1, login.getUser_ID());
-		ps.setString(2, login.getUser_Name());
+		ps.setInt(2, login.getUser_ID());
+		ps.setString(1, login.getUser_Name());
 		i = ps.executeUpdate();
 		ps.close();
 		conn.close();
 		return i;
 	}
-	private static final String getActorById_SQL = "SELECT * FROM actorinfo WHERE actorid =?";
+	private static final String getActorById_SQL = "SELECT * FROM User WHERE User_ID = ?";
 	//查询一行
 	public Login findLogin(int id)throws SQLException
 	{
@@ -72,8 +72,8 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		ps.setInt(1, id);
 		rs = ps.executeQuery();
 		while(rs.next()) {
-			login.setUser_ID(rs.getInt("actorid"));
-			login.setUser_Name(rs.getString("chinesename"));
+			login.setUser_ID(rs.getInt("User_ID"));
+			login.setUser_Name(rs.getString("User_Name"));
 		}
 		rs.close();
 		ps.close();
@@ -81,7 +81,7 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		return login;
 	}
 	
-	private static final String getAllActor_SQL = "SELECT * FROM actorinfo ";
+	private static final String getAllActor_SQL = "SELECT * FROM User";
 	//查询所有
 	public List<Login> getAllLogin() throws SQLException
 	{
@@ -94,8 +94,8 @@ public class LoginSQL extends DAOBase implements LoginDAO{
 		rs = ps.executeQuery();
 		while(rs.next()) {
 			Login login = new Login();
-			login.setUser_ID(rs.getInt("actorid"));
-			login.setUser_Name(rs.getString("chinesename"));
+			login.setUser_ID(rs.getInt("User_ID"));
+			login.setUser_Name(rs.getString("User_Name"));
 			all.add(login);
 		}
 		rs.close();
